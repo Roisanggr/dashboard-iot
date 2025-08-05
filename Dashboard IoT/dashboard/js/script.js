@@ -1,4 +1,3 @@
-
 // Wait for DOM and Chart.js to be fully loaded
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -29,6 +28,27 @@ document.addEventListener('DOMContentLoaded', function () {
             swiper: thumb_slider,
         },
     });
+
+    // Toggle sidebar
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('collapsed');
+            content.classList.toggle('expanded');
+        });
+    }
+
+    // Handle sidebar close button for mobile
+    const sidebarClose = document.getElementById('sidebarclose');
+    if (sidebarClose) {
+        sidebarClose.addEventListener('click', function() {
+            sidebar.classList.add('collapsed');
+            content.classList.add('expanded');
+        });
+    }
 
 });
 
